@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        .posts>img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Users</h1>
+    <div class="user">
+        
+    </div>
+    <h1>Posts</h1>
+    <input type="text" placeholder="Search by Id" name="" id="im">
+    <button onclick="getpost()">get posts</button>
+    <div class="posts">
+
+    </div>
+</body>
+<script>
+    let users=[]
+    display()
+    async function display() {
+        let res=await fetch("https://yummy-denim-mandarin.glitch.me/auth")
+        let data=await res.json()
+        let us=document.querySelector(".user")
+        let html=""
+        data.forEach(e => {
+            html+=`<p>id: ${e._id}</p>`
+        });
+        us.innerHTML=html
+    }
+    
+    async function getpost() {
+        let v=document.querySelector("#im").value
+        let res=await fetch(`https://yummy-denim-mandarin.glitch.me/auth/posts?userId=${v}`)
+        let data=await res.json()
+        console.log(data)
+        let us=document.querySelector(".posts")
+        let html=""
+        data.forEach(e => {
+            html+=`<img src="${e.media_url}"/>`
+            html+=`<p>captions: ${e.caption}</p>`
+        });
+        us.innerHTML=html
+    }
+
+</script>
+</html>

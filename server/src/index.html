@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OAuth</title>
+    <style>
+        .nav{
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            font-size: 25px;
+            border-bottom: 2px solid;
+        }
+        .btns{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <a href="">Login</a>
+        <a href="">Users</a>
+    </div>
+    <div>
+        <a href="">
+            <button>Login with facebook</button>
+        </a>
+        <a href="https://api.instagram.com/oauth/authorize?client_id=759060002265922&redirect_uri=https://yummy-denim-mandarin.glitch.me/auth/instagram/&scope=user_profile,user_media&response_type=code">
+            <button>Login with Instagram</button>
+        </a>
+    </div>
+</body>
+</html>
